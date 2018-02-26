@@ -1,0 +1,26 @@
+
+#include <iostream>
+#include <string>
+#include <set>
+
+using namespace std;
+int main() {
+	int found, count = 0,x,y,z;
+	string s;
+	set<char>s1;
+	cin >> s;
+	for (int i = 0;i < s.size();i++)
+	{
+		s1.insert(s[i]);
+			}
+	y = s1.size();
+	z = y % 2;
+	if (z == 0)
+
+		cout << "CHAT WITH HER!" << endl;
+	else
+		cout << "IGNORE HIM!" << endl;
+	
+
+	return 0;
+}
