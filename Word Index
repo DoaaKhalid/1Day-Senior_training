@@ -1,0 +1,72 @@
+#include<iostream>
+#include <bits/stdc++.h>
+using namespace std;
+map<string,int> m;
+string s="abcdefghijklmnopqrstuvwxyz";
+
+int GetStrings()
+{
+string s1,s2,s3,s4,s5;
+int ans=1;
+s1=s2=s3=s4=s5="";
+for(int i=0;i<s.size();i++)
+{
+    s1=s[i];
+    m[s1]=ans;
+    ans++;
+}
+for(int i=0;i<s.size();i++)
+for(int j=i+1;j<s.size();j++)
+{
+    s2=s[i];
+    s2+=s[j];
+    m[s2]=ans;
+    ans++;
+}
+for(int i=0;i<s.size();i++)
+for(int j=i+1;j<s.size();j++)
+for(int k=j+1;k<s.size();k++)
+{
+    s3=s[i];
+    s3+=s[j];
+    s3+=s[k];
+    m[s3]=ans;
+    ans++;
+}
+for(int i=0;i<s.size();i++)
+for(int j=i+1;j<s.size();j++)
+for(int k=j+1;k<s.size();k++)
+for(int d=k+1;d<s.size();d++)
+{
+    s4=s[i];
+    s4+=s[j];
+    s4+=s[k];
+    s4+=s[d];
+    m[s4]=ans;
+    ans++;
+}
+for(int i=0;i<s.size();i++)
+for(int j=i+1;j<s.size();j++)
+for(int k=j+1;k<s.size();k++)
+for(int d=k+1;d<s.size();d++)
+for(int n=d+1;n<=s.size();n++)
+{
+    s5=s[i];
+    s5+=s[j];
+    s5+=s[k];
+    s5+=s[d];
+    s5+=s[n];
+    m[s5]=ans;
+    ans++;
+}
+}
+int main()
+{
+  string a;
+while(cin>>a)
+{
+    GetStrings();
+    cout<< m[a];
+}
+	return 0;
+}
