@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+  bool solve(int a, int b, int c) {
+     for(int x=-100;x<=100 ;x++)
+      for(int y=-100;y<=100;y++)
+      for(int z=-100;z<=100;z++)
+                     if (x!=y && x!=z && y!=z && x*x+y*y+z*z==c && x*y*z==b && x+y+z==a) {
+                       cout << x << " " << y << " " << z << endl;
+                         return true;
+                    }
+     return false;
+  }
+int main()
+{
+
+  int n,a,b,c;
+  cin>>n;
+
+  while(n--)
+  {
+
+ cin >> a >> b >> c;
+       if (!solve(a,b,c))
+            cout << "No solution." << endl;
+  }
+    return 0;
+}
